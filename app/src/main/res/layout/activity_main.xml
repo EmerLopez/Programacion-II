@@ -1,18 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TabHost
+        android:id="@+id/tbhConver"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/tbcajero"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblcajero"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="40dp"
+                        android:text="Ingrese la cantidad a retirar:" />
+
+                    <EditText
+                        android:layout_width="337dp"
+                        android:layout_height="33dp"
+                        android:layout_below="@+id/lblcajero"></EditText>
+
+                    <TextView
+                        android:id="@+id/respuesta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total :"
+                        android:layout_marginTop="150dp"
+
+                        ></TextView>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="300dp"
+                        android:text="Calcular"
+                        ></Button>
+
+
+
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/tbarea"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/lbla1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="40dp"
+                        android:text="DE:" />
+
+                    <TextView
+                        android:id="@+id/lbla2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="100dp"
+                        android:text="A:" />
+                    <Spinner
+                        android:id="@+id/spnde"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="40dp"
+                        android:entries="@array/carea" />
+
+                    <Spinner
+                        android:id="@+id/spna"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginTop="100dp"
+                        android:entries="@array/carea" />
+
+                    <EditText
+                        android:id="@+id/txtingresod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="160dp"
+                        android:layout_marginRight="10dp"
+                        android:ems="10"
+                        android:hint="Cantidad"
+                        android:inputType="number" />
+
+                    <Button
+                        android:id="@+id/btnConvertir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtingresod"
+                        android:layout_marginTop="40dp"
+                        android:text="Convertir" />
+
+                    <TextView
+                        android:id="@+id/lblresultado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/btnConvertir"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="40dp"
+                        android:text="respuesta:" />
+
+
+                </RelativeLayout>
+
+
+
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+</RelativeLayout>
